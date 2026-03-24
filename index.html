@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>테트리스</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>테트리스</h1>
+      <p class="hint">← → 이동 · ↑ 회전 · ↓ 소프트 드롭 · 스페이스 하드 드롭 · P 일시정지</p>
+    </header>
+    <main class="main">
+      <div class="side left">
+        <div class="panel">
+          <h2>점수</h2>
+          <p class="stat" id="score">0</p>
+        </div>
+        <div class="panel">
+          <h2>레벨</h2>
+          <p class="stat" id="level">1</p>
+        </div>
+        <div class="panel">
+          <h2>라인</h2>
+          <p class="stat" id="lines">0</p>
+        </div>
+      </div>
+      <div class="board-wrap">
+        <canvas id="board" width="300" height="600" tabindex="0" aria-label="테트리스 보드"></canvas>
+        <div class="overlay hidden" id="overlay">
+          <div class="overlay-inner">
+            <p class="overlay-title" id="overlay-title">일시정지</p>
+            <button type="button" class="btn" id="btn-resume">계속하기</button>
+            <button type="button" class="btn secondary" id="btn-restart">다시 시작</button>
+          </div>
+        </div>
+      </div>
+      <div class="side right">
+        <div class="panel next-panel">
+          <h2>다음</h2>
+          <canvas id="next" width="120" height="120" aria-label="다음 블록"></canvas>
+        </div>
+        <div class="panel controls">
+          <h2>조작</h2>
+          <ul>
+            <li>이동: ← →</li>
+            <li>회전: ↑</li>
+            <li>빠르게: ↓</li>
+            <li>즉시 낙하: Space</li>
+            <li>일시정지: P</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
